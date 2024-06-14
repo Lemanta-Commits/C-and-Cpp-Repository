@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string phoneNo;
+    double sendAmt;
+    const double existingAmt = 2000.0;
+
+    cout << "Please enter phone number to send money to: ";
+    cin >> phoneNo;
+
+    cout << "Please enter amount: ";
+    cin >> sendAmt;
+
+    if(sendAmt <= existingAmt)
+    {
+        cout << "Send money to: " << phoneNo << " Amount: " << sendAmt << endl;
+    }
+    else
+    {
+        cout << "Insufficient funds" << endl;
+    }
+
+    return 0;
+}
