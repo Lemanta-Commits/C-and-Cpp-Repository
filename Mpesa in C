@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char phoneNo[20];
+    double sendAmt;
+    const double existingAmt = 2000.0;
+
+    // Input phone number
+    printf("Please enter phone number: ");
+    scanf("%19s", phoneNo); // Limiting input to avoid buffer overflow
+
+    // Input amount
+    printf("Please enter amount: ");
+    scanf("%lf", &sendAmt);
+
+    // Validate the amount
+    if (sendAmt <= 0) {
+        printf("Amount must be positive.\n");
+    } else if (sendAmt <= existingAmt) {
+        // Format the output amount to 2 decimal places
+        printf("Send money to: %s Amount: %.2f\n", phoneNo, sendAmt);
+    } else {
+        printf("Insufficient funds\n");
+    }
+
+    return 0;
+}
